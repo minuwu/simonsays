@@ -9,3 +9,14 @@ main{
 header{
     font-size: 5rem;
 }
+gamebody{
+    display: flex;
+    flex-wrap: wrap;
+    width: 20rem;
+    height: 20rem;
+
+}
+btn{
+    width: 50%;
+    height: 50%;
+}
