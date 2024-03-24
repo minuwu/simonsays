@@ -32,3 +32,16 @@ header{
     width: 50%;
     height: 50%;
 }
+
+#blue{
+    background-color:  rgb(61, 61, 206);
+}
+#red{
+    background-color: rgb(181, 50, 50);
+}
+#green{
+    background-color:  rgb(38, 149, 38);
+}
+#pink{
+    background-color: rgb(221, 37, 135);
+}
