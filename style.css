@@ -17,12 +17,13 @@ header{
 }
 .gamebody{
     margin: 0 auto;
+    padding: .5rem;
     min-width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 20rem;
+    /* min-width: 20rem; */
     height: 20rem;
     background-color: blueviolet;
 
@@ -30,5 +31,4 @@ header{
 .btn{
     width: 50%;
     height: 50%;
-    background-color: blue;
 }
