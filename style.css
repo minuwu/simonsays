@@ -4,44 +4,172 @@
     font-family: 'Courier New', Courier, monospace;
 
 }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
+}
 main{
-    margin: 0 auto;
-    width: 75%;
-    background-color: indianred;
+    margin: 2rem auto;
+    width: 350px;
+    border-radius: 1.5rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    padding-bottom: 2rem;
+    flex-shrink: 0;
 }
 header{
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
-    background-color: goldenrod;
+    background: linear-gradient(90deg, #f1c40f 60%, #f39c12 100%);
+    color: #222;
+    border-radius: 1.5rem 1.5rem 0 0;
+    padding: 1.2rem 0;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
 }
 .gamebody{
     margin: 0 auto;
-    padding: .5rem;
-    min-width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    /* min-width: 20rem; */
-    height: 20rem;
-    background-color: blueviolet;
-
+    padding: 1rem;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.2rem;
+    height: 320px;
+    background: transparent;
 }
 .btn{
-    width: 50%;
-    height: 50%;
+    width: 140px;
+    height: 140px;
+    border: none;
+    border-radius: 1.2rem;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transition: transform 0.1s, box-shadow 0.1s, filter 0.2s;
+    font-size: 0;
 }
-
 #blue{
-    background-color:  rgb(61, 61, 206);
+    background: linear-gradient(135deg, #3498db 60%, #2980b9 100%);
 }
 #red{
-    background-color: rgb(181, 50, 50);
+    background: linear-gradient(135deg, #e74c3c 60%, #c0392b 100%);
 }
 #green{
-    background-color:  rgb(38, 149, 38);
+    background: linear-gradient(135deg, #2ecc71 60%, #27ae60 100%);
 }
-#pink{
-    background-color: rgb(221, 37, 135);
+#yellow{
+    background: linear-gradient(135deg, #f1c40f 60%, #f39c12 100%);
+}
+.btn.pressed {
+    filter: brightness(1.3) drop-shadow(0 0 10px #fff);
+    transform: scale(0.95);
+    box-shadow: 0 0 24px 4px #fff7;
+}
+body.game-over {
+    background: linear-gradient(135deg, #e74c3c 0%, #f1c40f 100%);
+    transition: background 0.3s;
+}
+.score-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.2rem 1.5rem 0 1.5rem;
+    padding: .7rem 1rem;
+    background: #f7f7fa;
+    border-radius: .8rem;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    gap: 1rem;
+}
+.reset-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: .5rem;
+    padding: .4rem .9rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+.reset-btn:hover {
+    background: #c0392b;
+}
+.info-card {
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+    margin: 2rem;
+    padding: 2rem 1.5rem;
+    max-width: 320px;
+    min-width: 220px;
+    font-size: 1rem;
+    color: #222;
+}
+.info-card h2 {
+    margin-bottom: .7rem;
+    font-size: 1.3rem;
+    color: #2980b9;
+}
+.info-card h3 {
+    margin-top: 1.2rem;
+    font-size: 1.1rem;
+    color: #27ae60;
+}
+.info-card ul {
+    margin: .5rem 0 0 1.2rem;
+    padding: 0;
+    list-style: disc;
+}
+.info-card li {
+    margin-bottom: .4rem;
+}
+.btn.wrong {
+    animation: wrongFlash 0.4s;
+    background: linear-gradient(135deg, #e74c3c 60%, #c0392b 100%) !important;
+    box-shadow: 0 0 24px 4px #e74c3c77;
+}
+@keyframes wrongFlash {
+    0% { filter: brightness(1.2); }
+    50% { filter: brightness(2.2); }
+    100% { filter: brightness(1.2); }
+}
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .info-card {
+        max-width: 70vw;
+        width: 70vw;
+    }
+}
+@media (max-width: 500px) {
+    main {
+        width: 98vw;
+    }
+    .btn {
+        width: 40vw;
+        height: 40vw;
+        min-width: 90px;
+        min-height: 90px;
+    }
+    .score-section {
+        margin: 1rem .5rem 0 .5rem;
+        font-size: .98rem;
+        padding: .5rem .5rem;
+    }
+    .info-card {
+        margin: 4rem;
+        padding: 1.5rem 1rem;
+        font-size: .9rem;
+    }
 }

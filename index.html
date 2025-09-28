@@ -8,18 +8,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <main>
-        <header>
-            Press any key to start
-        </header>
-        <div class="gamebody">
-            <button class="btn" id="blue">a</button>
-            <button class="btn" id="red">r</button>
-            <button class="btn" id="green">r</button>
-            <button class="btn" id="pink">r</button>
-        </div>
-    </main>
-    <script src="app1.js"></script>
+    <div class="container">
+        <main>
+            <header>
+                Press any key to start
+            </header>
+            <div class="gamebody">
+                <button class="btn" id="blue" aria-label="Blue"></button>
+                <button class="btn" id="red" aria-label="Red"></button>
+                <button class="btn" id="green" aria-label="Green"></button>
+                <button class="btn" id="yellow" aria-label="Yellow"></button>
+            </div>
+            <section class="score-section">
+                <span>High Score: <span id="high-score">0</span></span>
+                <button id="reset-score" class="reset-btn" aria-label="Reset High Score"><i class="fa fa-rotate-left"></i> Reset</button>
+            </section>
+        </main>
+        <aside class="info-card">
+            <h2>What is Simon Says?</h2>
+            <p>
+                Simon Says is a classic memory game. The game will show you a sequence of colors. Your task is to repeat the sequence by clicking the colored buttons in the correct order. Each round, the sequence gets longer. How far can you go?
+            </p>
+            <h3>How to Play</h3>
+            <ul>
+                <li>Press any key to start.</li>
+                <li>Watch the sequence of flashes and sounds.</li>
+                <li>Repeat the sequence by clicking the buttons.</li>
+                <li>If you make a mistake, the game ends and your high score is saved.</li>
+                <li>Try to beat your high score!</li>
+            </ul>
+        </aside>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
